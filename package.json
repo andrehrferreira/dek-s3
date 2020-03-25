@@ -1,0 +1,51 @@
+{
+    "name": "@dekproject/s3",
+    "version": "0.0.1",
+    "description": "AWS S3 interface plugin for DEK",
+    "main": "./build/index.js",
+    "scripts": {
+        "test": "mocha",
+        "build": "babel src -s -D -d build --presets env",
+        "lint": "eslint '**/*.js'",
+        "lint:fix": "eslint '**/*.js' --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dekproject/s3.git"
+    },
+    "keywords": [
+        "dek",
+        "plugin",
+        "aws",
+        "s3"
+    ],
+    "author": "Andre Ferreira <andre@vigiadepreco.com.br>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/dekproject/s3/issues"
+    },
+    "homepage": "https://github.com/dekproject/s3#readme",
+    "contributors": [
+        "Gislainy Velasco <gislainy.velasco@vigiadepreco.com.br>"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint && npm run build"
+        }
+    },
+    "dependencies": {
+        "aws-sdk": "^2.645.0",
+        "multer": "^1.4.2",
+        "multer-s3": "^2.9.0"
+    },
+    "devDependencies": {
+        "@dekproject/scope": "^1.1.2",
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^10.1.0",
+        "babel-preset-env": "^1.7.0",
+        "dotenv": "^6.2.0",
+        "eslint": "^6.8.0",
+        "husky": "^4.2.3",
+        "mocha": "^6.0.1"
+    }
+}

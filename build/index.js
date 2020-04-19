@@ -24,6 +24,10 @@ var _multerS = require("multer-s3");
 
 var _multerS2 = _interopRequireDefault(_multerS);
 
+var _md = require("md5");
+
+var _md2 = _interopRequireDefault(_md);
+
 var _scope = require("@dekproject/scope");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -63,7 +67,7 @@ exports.default = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(functi
                                         _crypto2.default.randomBytes(16, function (err, hash) {
                                             if (err) cb(err);else {
                                                 var hashHex = hash.toString("hex");
-                                                var fileName = hashHex.substring(0, 2) + "/" + hashHex.substring(2, 5) + "/" + hashHex.substring(5, 9) + "/" + hashHex.substring(9, 14) + "/" + hashHex.substring(14, 20) + "/" + file.originalname;
+                                                var fileName = hashHex.substring(0, 2) + "/" + hashHex.substring(2, 5) + "/" + hashHex.substring(5, 9) + "/" + hashHex.substring(9, 14) + "/" + hashHex.substring(14, 20) + "/" + (0, _md2.default)(file.originalname) + _path2.default.extname(file.originalname);
                                                 cb(null, fileName);
                                             }
                                         });
